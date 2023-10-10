@@ -1,0 +1,88 @@
+#include <iostream.h>
+using namespace std;
+struct data{
+	string kode[5];
+	string nama[5];
+	string tahun[5];
+	string pengarang[5];
+	int harga[5];
+	
+};
+void edit();
+void add();
+void  tampil();
+int penanda = -1;
+void utama(){
+	int pilihan;
+	cout<<"Pilih Tindakan :"<<endl
+	<<"1 = Tambah Buku"<<endl
+	<<"2 = Edit Buku\n"
+	<<"3 = Hapus Buku\n"
+	<<"4 = Tampilkan Buku\n";
+	cout<<"Pilihan : ";
+	cin>>pilihan;
+	if(pilihan == 1){
+		add();
+	}
+	else if(pilihan == 2){
+		edit();
+	}
+	else if(pilihan == 1){
+		add();
+	}
+	else if(pilihan == 4){
+		tampil();
+	}
+}
+void add(){
+	data buku;
+	
+	penanda++;
+	cout<<"Buku Ke# "<<penanda+1<<endl;
+	cout<<"Kode Buku : ";
+	cin>>buku.kode[penanda];
+	cout<<"Nama Buku : ";
+	cin>>buku.nama[penanda];
+	cout<<"Tahun Terbit : ";
+	cin>>buku.tahun[penanda];
+	cout<<"Pengarang Buku : ";
+	cin>>buku.pengarang[penanda];
+	cout<<"Harga : ";
+	cin>>buku.harga[penanda];
+	utama();	
+}
+void edit(){
+	data buku;
+	int edit;
+	cout<<"Edit Buku ke? : ";
+	cin>>edit;
+	cout<<"Buku Ke# "<<edit<<endl;
+	cout<<"Kode Buku : "<<buku.kode[edit-1]<<" menjadi :";
+	cin>>buku.kode[edit-1];
+	cout<<"Nama Buku : "<<buku.nama[edit-1]<<" menjadi :";
+	cin>>buku.nama[edit-1];
+	cout<<"Tahun Terbit : "<<buku.tahun[edit-1]<<" menjadi :";
+	cin>>buku.tahun[edit-1];
+	cout<<"Pengarang Buku : "<<buku.pengarang[edit-1]<<" menjadi :";
+	cin>>buku.pengarang[edit-1];
+	cout<<"Harga : "<<buku.harga[edit-1]<<" menjadi :";
+	cin>>buku.harga[edit-1];
+	tampil();
+}
+void tampil(){
+	data buku;
+	cout<<"jumlah Buku : "<<penanda+1<<endl;
+	for(int i=0; i<=penanda; i++){
+		cout<<"Data Buku #"<<i+1<<endl;
+		cout<<"Kode Buku :  "<<buku.kode[i]<<endl;
+		cout<<"Nama Buku :  "<<buku.nama[i]<<endl;
+		cout<<"Tahun Terbit :  "<<buku.tahun[i]<<endl;
+		cout<<"Pengarang Buku :  "<<buku.pengarang[i]<<endl;
+		cout<<"Harga Buku :  "<<buku.harga[i]<<endl;
+	}
+	utama();
+}
+main(){
+utama();	
+	
+}
